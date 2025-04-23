@@ -1,0 +1,7 @@
+:root{
+    --primary-color: #5b4632; /* marrom*/
+    --bege: #efe5da;
+    --white-color: #ffffff; /* criando variaveis no css*/
+    --gap: 3rem; /* largura padrão*/
+    --light-brown-color: #a98f76;
+}
