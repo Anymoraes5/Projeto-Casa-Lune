@@ -10,8 +10,12 @@
     background-position: center center;
     color: var(--primary-color)
 }
+.three-bg{
+    background-color: #5b4632;
+    color: var(--bege);
+}
 .main-content{
-    max-width: 120rem;
+    max-width: 192rem;
     margin: 0 auto;
     padding: var(--gap);
 }
