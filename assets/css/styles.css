@@ -23,7 +23,7 @@
     margin-left: 4rem;
 }
 .sobre-text-content p, span{
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     margin-bottom: 1rem;
 }
 
@@ -34,22 +34,14 @@
     flex-direction: column; /* só isso! */
     justify-content: center;
     align-items: center;
-    height: 100vh;
+
 
     text-align: center;
     margin: 2rem;
     font-weight: 200;
-
-    /* display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-
-
-    text-align: center;
-    margin: 2rem 2rem;
-    font-weight: 200; */
+}
+.grid1-content h2{
+  margin-top: 4rem;
 }
 .grid {
     display: flex;
@@ -100,7 +92,7 @@ article {
 .refil {
     display: flex;
     flex-wrap: nowrap;
-    height: 100vh; /* ou auto, se preferir que tudo se ajuste ao conteúdo */
+     /* ou auto, se preferir que tudo se ajuste ao conteúdo */
   }
   
   .foto1, .refil-img {
@@ -126,7 +118,7 @@ article {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     line-height: 1.6;
   }
   /* ----------------------------------------------- */
@@ -139,6 +131,7 @@ article {
     justify-content: center;
     max-width: 100%;
     align-items: center;
+
   }
   section.galeria{
     height: 90vh;
@@ -146,6 +139,7 @@ article {
   }
  
   .galeria h2{
+    margin-top: 2rem;
     margin-bottom: 2rem;
     margin-left: 3.7rem;
   }
@@ -190,4 +184,79 @@ article {
 .imagens p{
   font-size: 18px;
   font-weight: 400;
+}
+/* -------------------------------------------------------- */
+.content-contatos{
+  width:  90%;
+  height: 60rem;
+
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 2rem;
+  align-items: center;
+  background-color: #523d2c;
+  color: var(--bege);
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  justify-content: center;
+
+  background-color: var(--primary-color);
+
+}
+.form1{
+  font-size: 14px;
+  font-weight: 200;
+}
+input{
+  width: 30rem;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  border: 0.1rem solid var(--bege);
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+
+  font-family: 'Poppins', sans-serif;
+}
+.formulario h2{
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+}
+
+.formulario{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+}
+.img-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 50rem;
+  height: 50rem;
+  margin-left: 2rem;
+  margin-right: 5rem;
+}
+button{
+  margin-top: 2rem;
+  width: 33rem;
+  background-color: #32261b;
+  color: aliceblue;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  transition: 0.5s;
+  font-family: 'Poppins';
+}
+
+button:hover{
+  background-color: aliceblue;
+  color: #32261b;
+  transform: scale(1.02);
 }
