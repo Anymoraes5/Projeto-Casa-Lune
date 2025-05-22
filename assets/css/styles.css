@@ -204,7 +204,7 @@ article {
   gap: var(--gap);
   justify-content: center;
 
-  background-color: var(--primary-color);
+  /* background-color: var(--primary-color); */
 
 }
 .form1{

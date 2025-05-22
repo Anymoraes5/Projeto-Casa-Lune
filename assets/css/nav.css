@@ -35,9 +35,10 @@ a{
     display: block;
     padding: 2rem;
     font-size: 1.6rem;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: var(---bege);
     position: relative;
+    letter-spacing: 0.1rem;
 }
 .menu ul li a::after{
     content: '';
@@ -51,5 +52,6 @@ a{
 }
 .menu ul li a:hover::after{
     width: 80%;
-    left: 15%;
+    left: 10%;
+
 }
