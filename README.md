@@ -1,4 +1,7 @@
-# LOJA FICTÍCIA CASA LUNE
+# LOJA FICTÍCIA CASA LUNE 🌙
+
+<img width="1900" height="918" alt="image" src="https://github.com/user-attachments/assets/bb3e892d-b1af-4ae6-b766-32a82e37f454" />
+
 
 Este projeto faz parte do desenvolvimento da Loja Multi Arte, uma vitrine online para apresentar peças únicas como almofadas exclusivas, velas aromáticas retornáveis, artigos de cerâmica e outras criações artísticas.
 
@@ -27,9 +30,7 @@ JavaScript (opcional) → Possíveis interações e animações futuras.
 
 │── index.html  → Estrutura da página
 
-│── /css/style.css  → Estilos e layout
-
-│── /assets/img →Imagens dos produtos
+│── /assets/img/css/js →Imagens dos produtos, Estilos e layout
 
 │── README.md → Este arquivo
 
