@@ -20,7 +20,7 @@
     padding: var(--gap);
 }
 .section{
-    min-height: 98vh;
+    min-height: 100vh;
 }
 .menu-spacing{
     height: 65px;

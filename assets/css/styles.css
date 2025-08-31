@@ -2,10 +2,11 @@
     position: relative;
     top: -6rem;
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1fr 1fr;
     align-items: stretch;
     gap: var(--gap);
-    height: 100vh;
+    min-height: 100%;
+    overflow-x: hidden;
 }
 .sobre-text-content, .sobre-img{
     display: flex;
@@ -16,8 +17,8 @@
 .sobre-img img{
     display: block;
     margin: 0 auto;
-    max-width: 100%;
-    max-height: 100vh;
+    max-width: 110%;
+    max-height: 110vh;
 }
 .span{
     margin-left: 4rem;
@@ -94,6 +95,9 @@ article {
     flex-wrap: nowrap;
      /* ou auto, se preferir que tudo se ajuste ao conteúdo */
   }
+  #refil{
+    min-height: 100%;
+  }
   
   .foto1, .refil-img {
     flex: 1; /* faz as imagens ocuparem o mesmo espaço proporcional */
@@ -125,17 +129,18 @@ article {
   .container {
     display: grid;
     grid-template-columns: repeat(6, 150px); /* 6 colunas fixas */
-    grid-template-rows: repeat(4, 150px);
+    grid-template-rows: repeat(3, 150px);
     gap: 3rem;
 
     justify-content: center;
     max-width: 100%;
     align-items: center;
-
   }
+
   section.galeria{
-    height: 90vh;
-    overflow: hidden;
+    height: auto;
+    min-height: 100%;
+    /* overflow: hidden; */
   }
  
   .galeria h2{
@@ -152,8 +157,8 @@ article {
   }
   
 .imagens {
-  position: relative; /* ESSENCIAL */
-  width: 17rem;
+  position: relative; /* ESSENCIAL */   
+  width: 17rem;  /* isso diz respeito a imagem do grid */
   height: 17rem;
   overflow: hidden;
 }
@@ -184,6 +189,8 @@ article {
 .imagens p{
   font-size: 18px;
   font-weight: 400;
+  display: flex;
+  margin: 0.2rem;
 }
 /* -------------------------------------------------------- */
 .content-contatos{
@@ -197,6 +204,9 @@ article {
   align-items: center;
   background-color: #523d2c;
   color: var(--bege);
+}
+#contato{
+  min-height: 100%;
 }
 .form{
   display: flex;

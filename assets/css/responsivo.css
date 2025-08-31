@@ -1,240 +1,244 @@
-/* Desktop: mostra links em linha */
-.menu-lista ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+/* ---------------- MENU HAMBURGER ---------------- */
 
-.menu-lista a {
-  text-decoration: none;
-  color: #333;
-}
-
-
-#menu-toggle,
-.menu-icon {
+/* Botão hamburger escondido no desktop */
+.menu-toggle {
   display: none;
+  font-size: 3rem;
+  cursor: pointer;
+  color: #fff;
 }
 
-@media (max-width: 480px) {
+/* Mobile - até 768px */
+@media (max-width: 768px) {
 
-  .menu{
-    align-items: center;
-    width: 100vw;
-  }
-
-  .menu-icon {
+  /* Mostra o botão hamburger */
+  .menu-toggle {
     display: block;
-    font-size: 2rem;
-    cursor: pointer;
-    padding: 0.8rem;
   }
 
-
-  /* Mostrar o menu-lista só quando o checkbox estiver marcado */
-  #menu-toggle:checked + .menu-icon + h1 + .menu-lista ul{
-    display: flex;
-  }
-
-  /* Estilo da lista no menu hamburguer */
-
-  .menu-lista ul {
+  /* Menu inicialmente escondido */
+  #menu-list {
+    display: none;            /* escondido por padrão */
+    flex-direction: column;   /* empilha verticalmente */
+    width: 100%;              /* ocupa toda a largura */
+    background-color: var(--primary-color);
     position: absolute;
-    top: 4.5rem;
-    left:0;
-    background-color: #5b4632;
-    z-index: 1;
-    width: 18rem;
-    display: none;
-    flex-direction: column;
-
+    top: 100%;                /* logo abaixo do menu */
+    left: 0;
+    padding: 1rem 0;
+    border-radius: 0 0 8px 8px;
+    z-index: 999;
   }
-  .menu-lista ul li a {
+
+  /* Menu visível quando ativo */
+  #menu-list.show {
+    display: flex;
+  }
+
+  /* Itens do menu em coluna */
+  #menu-list ul {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-
-    padding: 2rem;
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    color: var(---bege);
-    font-size: 1.2rem;
-    position: relative;
-    letter-spacing: 0.1rem;
-
+    padding: 0;
+    margin: 0;
+    list-style: none;
   }
 
-  .menu-lista li {
-    margin-bottom: 0.7rem;
+  #menu-list ul li a {
+    display: block;
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    color: var(--bege);
   }
 
-  .menu-spacing{
-    display: none;
-  }
-  
-
-/* ------------------------------------------------------- */
-  section{
-    height: 100dvh;
-    background-color: var(--white-color);
-  }
-  .section{
-    width: 100vw;
-  }
-  /* ---------------------SOBRE-ABAIXO----------------------------------- */
-  .sobre-content{
-      position: relative;
-      top: 6rem;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      gap: var(--gap);
-      height: 100dvh;
-  }
-  .sobre-text-content h2{
-    font-size: 4rem;
-    font-weight: 800;
-    margin-bottom: 2rem;
-  }
-  .sobre-text-content{
-    display: flex;
-    flex-flow: column;
-    width: 100%;
+  /* Ajusta o menu principal */
+  .menu-content {
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-  }
-
-  .sobre-text-content, .sobre-img{
-      display: flex;
-      flex-flow: column wrap;
-      align-items: center;
-      justify-content: center;
-  }
-  .sobre-img img{
-      display: block;
-      margin: 0 auto;
-      max-width: 100%;
-      max-height: 100vh;
-      border-radius: 3rem;
-  }
-  .sobre-text-content p, span{
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-  }
-
-/* -----------------------CAMPEÃO DE VENDAS----------------------------------- */
-
-  .grid1-content{
-      display: flex;
-      flex-direction: column; /* só isso! */
-      justify-content: center;
-      align-items: center;
-      width: 100vw;
-
-      text-align: center;
-      margin: 0;
-      font-weight: 200;
-  }
-  .grid1-content h2{
-    margin-top: 4rem;
-    font-size: 5rem;
-  }
-  .grid1-content p{
-    display: none;
-  }
-  .grid {
-      display: flex;
-      /* justify-content: space-evenly; */
-      flex-direction: row;
-
-      /* grid-template-columns: repeat(3, 1fr); */
-      gap: var(--gap);
-      
-      align-items: center;
-      justify-items: center;
-      padding: 0;
-      
-  }
-  .grid h3{
-      font-size: 3rem;
-  }
-  .grid h3::before{
-      font-size: 3rem;
-  }
-  .grid h4{
-      font-size: 1.6rem;
-      font-family: 'Open Sans', sans-serif;
-      font-weight: 300;
-      width: 30rem;
-  }
- 
-
-  .grid img{
-      width: 30rem;
-      height: 50rem;
-      display: flex;
-
-      justify-content: center;
-      align-items: center;
-      object-fit: cover;
-      border-radius: 1rem;
-  }
-  .carousel {
     position: relative;
-    max-width: 100%; 
-    margin: 0 auto; 
-    overflow: hidden;
+  }
+}
+
+/* ---------------- RESPONSIVO GERAL ---------------- */
+
+/* Tablets médios (até 1024px) */
+@media (max-width: 1024px) {
+  html {
+    font-size: 58%;
   }
 
-  .carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
-
-  .carousel-track article {
-    width: 34rem;
-    min-width: 100vw;
-    box-sizing: border-box;
-    padding: 1rem;
+  .sobre-content {
+    grid-template-columns: 1fr; /* quebra em 1 coluna */
     text-align: center;
   }
 
-  .carousel-track img {
-    width: 100%;
-    max-height: 50rem;
-    object-fit: cover;
-    border-radius: 10px;
-
-    display: block;
+  .sobre-img img {
+    max-width: 80%;
     margin: 0 auto;
-    
   }
 
-  button.prev,
-  button.next {
-    position: absolute;
-    top: 50%;
-    width: 5rem;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
+  .grid {
+    flex-direction: column; /* artigos um embaixo do outro */
+    gap: 2rem;
+  }
+
+  .refil {
+    flex-direction: column; /* empilha foto-texto-foto */
+  }
+
+  .container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* grid dinâmico */
+    gap: 2rem;
+  }
+
+  .content-contatos {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .img-content {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  input,
+  textarea,
+  button {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #menu-list ul {
+    gap: 1rem;
+  }
+}
+
+/* Celulares grandes (até 768px) */
+@media (max-width: 768px) {
+  html {
+    font-size: 55%;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 3.5rem;
+  }
+
+  p, span {
+    font-size: 1.6rem;
+  }
+
+  .grid img {
+    width: 100%;
+    height: auto;
+  }
+
+  .container img,
+  .imagens {
+    width: 100%;
+    height: auto;
+  }
+
+  .menu-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #menu-list {
+    width: 100%;
+  }
+
+  #menu-list ul li a {
+    padding: 1rem;
+    font-size: 1.8rem;
+  }
+}
+.sobre-text-content{
+  margin-top: 8rem;
+}
+.sobre-img{
+  width: 30rem;
+  height: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#sobre{
+  min-height: 100%;
+  background-color: var(--bege);
+}
+
+.container {
+    display: flex;                  
+    flex-direction: row;
+    overflow-x: auto;               
+    gap: 2.5rem;
+    scroll-snap-type: x mandatory;  
+    padding-bottom: 1rem;
+    justify-content: flex-start;    
+  }
+
+  .imagens {
+    flex: 0 0 calc((100% / 2) - 0.99rem); /* 3 itens visíveis por vez */
+    scroll-snap-align: start;
+    width: auto;                       
+    height: auto;                      
+  }
+
+  .container img {
+    width: 280px;
+    height: 400px;                     
+    object-fit: cover;
+  }
+
+  .overlay {
+    font-size: 0.9rem;                  
+    padding: 0.5rem;
+  }
+
+
+
+
+/* Celulares pequenos (até 480px) */
+@media (max-width: 480px) {
+  html {
+    font-size: 50%;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.8rem;
+  }
+
+  .sobre-img img {
+    max-width: 100%;
+  }
+
+  .grid h4 {
+    width: auto;
+    font-size: 1.4rem;
+  }
+
+  .content-contatos {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .formulario h2 {
     font-size: 2rem;
-    cursor: pointer;
-    z-index: 10;
+    text-align: center;
   }
 
-  button.prev {
-    left: 10px;
-  }
-
-  button.next {
-    right: 10px;
-  }
-  .form{
-    display: none;
+  button {
+    font-size: 1.6rem;
+    padding: 1rem;
   }
 }

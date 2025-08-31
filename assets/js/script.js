@@ -1,13 +1,16 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const links = document.querySelectorAll(".menu-lista a");
-  const checkbox = document.getElementById("menu-toggle");
+const toggle = document.getElementById("menu-toggle");
+const menu   = document.getElementById("menu-list");
 
-  links.forEach(link => {
-    link.addEventListener("click", function () {
-      if (window.innerWidth <= 768) {
-        checkbox.checked = false;
-      }
-    });
+// Abre/fecha menu ao clicar no hambúrguer
+toggle.addEventListener("click", () => {
+  menu.classList.toggle("show");
+});
+
+// Fecha menu ao clicar em qualquer item
+const links = menu.querySelectorAll("a");
+links.forEach(link => {
+  link.addEventListener("click", () => {
+    menu.classList.remove("show");
   });
 });
 
