@@ -96,6 +96,7 @@ article {
 .refil {
     display: flex;
     flex-wrap: nowrap;
+    text-align: justify;
      /* ou auto, se preferir que tudo se ajuste ao conteúdo */
   }
   #refil{
@@ -159,42 +160,45 @@ article {
     transition: transform 0.3s ease;
   }
   
-.imagens {
-  position: relative; /* ESSENCIAL */   
-  width: 17rem;  /* isso diz respeito a imagem do grid */
-  height: 17rem;
-  overflow: hidden;
-}
-  .imagens img:hover {
-    transform: scale(1.05);
+  .imagens {
+    position: relative; /* ESSENCIAL */   
+    width: 17rem;  /* isso diz respeito a imagem do grid */
+    height: 17rem;
+    overflow: hidden;
   }
-  
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #5b4632ce; /* Cor escura e transparente */
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  font-size: 1rem;
-  font-weight: bold;
-  text-align: center;
-}
-.imagens:hover .overlay {
-  opacity: 1;
-}
-.imagens p{
-  font-size: 18px;
-  font-weight: 400;
-  display: flex;
-  margin: 0.2rem;
-}
+    .imagens img:hover {
+      transform: scale(1.05);
+    }
+    
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #5b4632ce; /* Cor escura e transparente */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  .imagens:hover .overlay {
+    opacity: 1;
+  }
+  .imagens p{
+    font-size: 18px;
+    font-weight: 400;
+    display: flex;
+    margin: 0.2rem;
+  }
+  #galeria-mobile{
+    display: none;
+  }
 /* -------------------------------------------------------- */
 .content-contatos{
   width:  90%;
@@ -272,4 +276,12 @@ button:hover{
   background-color: aliceblue;
   color: #32261b;
   transform: scale(1.02);
+}
+/* ======================footer======================== */
+.footer{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-size: 1.6rem;
 }
