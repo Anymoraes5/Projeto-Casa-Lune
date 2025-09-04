@@ -15,25 +15,28 @@ links.forEach(link => {
 });
 
 // -------------------campeão de vendasa----------------
-const track = document.querySelector('.carousel-track');
-  const slides = document.querySelectorAll('.carousel-track article');
-  const prevBtn = document.querySelector('.prev');
-  const nextBtn = document.querySelector('.next');
-  let index = 0;
+const wrapper = document.querySelector('.grid-mobile .carrossel-wrapper');
+const items = document.querySelectorAll('.grid-mobile .carrossel-item');
 
-  function updateCarousel() {
-    const slideWidth = slides[0].offsetWidth;
-    track.style.transform = `translateX(-${index * slideWidth}px)`;
-  }
+let index = 0;
 
-  nextBtn.addEventListener('click', () => {
-    if (index < slides.length - 1) index++;
-    updateCarousel();
-  });
+function slideNext() {
+  index++;
+  if (index >= items.length) index = 0;
+  wrapper.style.transform = `translateX(-${index * 100}%)`;
+}
 
-  prevBtn.addEventListener('click', () => {
-    if (index > 0) index--;
-    updateCarousel();
-  });
+setInterval(slideNext, 2000);
+//--------------------ver mais/catalogo------------------
+document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('ver-mais');
+    const extras = document.querySelectorAll('#grid-catalogo .extra');
 
-  window.addEventListener('resize', updateCarousel);
+    btn.addEventListener('click', () => {
+        const mostrar = !extras[0].classList.contains('show');
+
+        extras.forEach(item => item.classList.toggle('show', mostrar));
+
+        btn.textContent = mostrar ? 'Ver menos' : 'Ver mais';
+    });
+});

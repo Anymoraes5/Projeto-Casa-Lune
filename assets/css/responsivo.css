@@ -1,244 +1,239 @@
-/* ---------------- MENU HAMBURGER ---------------- */
-
-/* Botão hamburger escondido no desktop */
-.menu-toggle {
-  display: none;
-  font-size: 3rem;
-  cursor: pointer;
-  color: #fff;
-}
-
-/* Mobile - até 768px */
+/* ================= RESPONSIVO MOBILE - até 768px ================= */
 @media (max-width: 768px) {
+    html { font-size: 55%; }
 
-  /* Mostra o botão hamburger */
-  .menu-toggle {
-    display: block;
-  }
+    /* ================= MENU ================= */
+    .menu-toggle {
+        display: block;
+    }
+    #menu-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--primary-color);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 1rem 0;
+        border-radius: 0 0 8px 8px;
+        z-index: 999;
+    }
+    #menu-list.show { display: flex; }
+    #menu-list ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        gap: 1rem;
+    }
+    #menu-list ul li a {
+        display: block;
+        padding: 1rem 2rem;
+        font-size: 1.8rem;
+        color: var(--bege);
+    }
+    .menu-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-  /* Menu inicialmente escondido */
-  #menu-list {
-    display: none;            /* escondido por padrão */
-    flex-direction: column;   /* empilha verticalmente */
-    width: 100%;              /* ocupa toda a largura */
-    background-color: var(--primary-color);
-    position: absolute;
-    top: 100%;                /* logo abaixo do menu */
-    left: 0;
-    padding: 1rem 0;
-    border-radius: 0 0 8px 8px;
-    z-index: 999;
-  }
+    /* ================= SOBRE ================= */
+    .sobre-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    .sobre-img img {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    .sobre-text-content {
+        margin-top: 4rem;
+    }
 
-  /* Menu visível quando ativo */
-  #menu-list.show {
-    display: flex;
-  }
+    /* ================= GRID / CARROSSEL ================= */
+    /* Esconder grid desktop original */
+    #grid1 .carousel-track{
+        display: none;
+    }
+    .grid{
+      display: none;
+    }
+    .grid-mobile {
+      display: block;
+      padding: 10px 0;
+    }
 
-  /* Itens do menu em coluna */
-  #menu-list ul {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
+    .carrossel-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden; /* evita overflow horizontal */
+    }
 
-  #menu-list ul li a {
-    display: block;
-    padding: 1rem 2rem;
-    font-size: 1.8rem;
-    color: var(--bege);
-  }
+    .carrossel-wrapper {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        will-change: transform;
+        scroll-behavior: smooth;
+    }
 
-  /* Ajusta o menu principal */
-  .menu-content {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-  }
-}
+    .carrossel-item {
+        flex: 0 0 100%;
+        text-align: center;
+    }
 
-/* ---------------- RESPONSIVO GERAL ---------------- */
+    .carrossel-item img {
+        width: 30rem;      /* reduz o tamanho da imagem */
+        height: 40rem;
+        /* display: block;
+        margin: 0 auto;  centraliza a imagem */
+        border-radius: 8px;
+        object-fit: cover;
+    }
 
-/* Tablets médios (até 1024px) */
-@media (max-width: 1024px) {
-  html {
-    font-size: 58%;
-  }
+    .grid-mobile h3 {
+        font-size: 2rem;
+        margin: 0.5rem 0;
+    }
+   
+    .grid-mobile h4 {
+        font-size: 1.6rem;
+        font-weight: 300;
+    }
 
-  .sobre-content {
-    grid-template-columns: 1fr; /* quebra em 1 coluna */
-    text-align: center;
-  }
+  
+    /* ================= GALERIA IMAGENS ================= */
+    #galeria{
+      display: none;
+    }
+    .galeria{
+      display: none;
+    }
+    .overlay {
+    display: none !important;
+    }
 
-  .sobre-img img {
-    max-width: 80%;
-    margin: 0 auto;
-  }
-
-  .grid {
-    flex-direction: column; /* artigos um embaixo do outro */
-    gap: 2rem;
-  }
-
-  .refil {
-    flex-direction: column; /* empilha foto-texto-foto */
-  }
-
-  .container {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* grid dinâmico */
-    gap: 2rem;
-  }
-
-  .content-contatos {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .img-content {
-    width: 100%;
-    height: auto;
-    margin: 0;
-  }
-
-  input,
-  textarea,
-  button {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  #menu-list ul {
+    #grid-catalogo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* duas colunas */
     gap: 1rem;
+    }
+
+    #extras{
+      display: none;
+    }
+
+
+
+    /* botão ocupa toda a linha do grid e centraliza */
+    .grid-botao {
+        grid-column: 1 / -1; /* ocupa todas as colunas */
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    #ver-mais {
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        border: none;
+    }
+
+    .galeria-grid-mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem; /* distância entre h2 e h4 */
+      margin-bottom: 1rem; /* espaço entre títulos e grid */
+      width: 100%;
+      overflow: hidden;
+    }
+    .galeria-grid-mobile h4{
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+    #galeria-mobile .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas no mobile */
+        gap: 1rem; /* espaço entre os itens */
+        padding: 0;
+    }
+
+    #galeria-mobile .imagens {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        overflow: hidden;
+        border-radius: 8px;
+        background-color: #f5f5f5;
+    }
+
+    #galeria-mobile .imagens img {
+        width: 20rem;
+        height: 30rem;
+        object-fit: cover; /* cobre todo o espaço do container sem deformar */
+        border-radius: 8px 8px 0 0;
+    }
+
+    #galeria-mobile .legenda {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: rgba(233, 233, 233, 0.659); /* fundo semi-transparente */
+        color: #fff;
+        padding: 0.5rem;
+        text-align: center;
+    }
+
+    #galeria-mobile .legenda h3 {
+        font-size: 1.4rem;
+        margin: 0;
+        color: #333;
+    }
+    /* ================= REFIL ================= */
+    .refil {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+    .refil img {
+        width: 20%;
+        margin: 0 auto;
+    }
+
+    /* ================= CONTATO ================= */
+    .content-contatos {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    .img-content {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+    .formulario h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+    input, textarea, button {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+    button {
+        font-size: 1.6rem;
+        padding: 1rem;
+    }
+    #contato{
+      display: none;
+    }
+
+    /* ================= TIPOGRAFIA ================= */
+    h1 { font-size: 4rem; }
+    h2 { font-size: 3rem; }
+    p, span { font-size: 1.6rem; }
   }
-}
-
-/* Celulares grandes (até 768px) */
-@media (max-width: 768px) {
-  html {
-    font-size: 55%;
-  }
-
-  h1 {
-    font-size: 4rem;
-  }
-
-  h2 {
-    font-size: 3.5rem;
-  }
-
-  p, span {
-    font-size: 1.6rem;
-  }
-
-  .grid img {
-    width: 100%;
-    height: auto;
-  }
-
-  .container img,
-  .imagens {
-    width: 100%;
-    height: auto;
-  }
-
-  .menu-content {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  #menu-list {
-    width: 100%;
-  }
-
-  #menu-list ul li a {
-    padding: 1rem;
-    font-size: 1.8rem;
-  }
-}
-.sobre-text-content{
-  margin-top: 8rem;
-}
-.sobre-img{
-  width: 30rem;
-  height: 30rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#sobre{
-  min-height: 100%;
-  background-color: var(--bege);
-}
-
-.container {
-    display: flex;                  
-    flex-direction: row;
-    overflow-x: auto;               
-    gap: 2.5rem;
-    scroll-snap-type: x mandatory;  
-    padding-bottom: 1rem;
-    justify-content: flex-start;    
-  }
-
-  .imagens {
-    flex: 0 0 calc((100% / 2) - 0.99rem); /* 3 itens visíveis por vez */
-    scroll-snap-align: start;
-    width: auto;                       
-    height: auto;                      
-  }
-
-  .container img {
-    width: 280px;
-    height: 400px;                     
-    object-fit: cover;
-  }
-
-  .overlay {
-    font-size: 0.9rem;                  
-    padding: 0.5rem;
-  }
-
-
-
-
-/* Celulares pequenos (até 480px) */
-@media (max-width: 480px) {
-  html {
-    font-size: 50%;
-  }
-
-  h1 {
-    font-size: 3rem;
-  }
-
-  h2 {
-    font-size: 2.8rem;
-  }
-
-  .sobre-img img {
-    max-width: 100%;
-  }
-
-  .grid h4 {
-    width: auto;
-    font-size: 1.4rem;
-  }
-
-  .content-contatos {
-    padding: 1rem;
-    gap: 1rem;
-  }
-
-  .formulario h2 {
-    font-size: 2rem;
-    text-align: center;
-  }
-
-  button {
-    font-size: 1.6rem;
-    padding: 1rem;
-  }
-}

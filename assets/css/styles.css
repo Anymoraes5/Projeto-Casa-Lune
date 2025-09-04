@@ -29,6 +29,9 @@
 }
 
 /* ---------------------------------------- */
+.grid-mobile{
+  display: none;
+}
 
 .grid1-content{
     display: flex;
